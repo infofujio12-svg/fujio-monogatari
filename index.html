@@ -160,7 +160,13 @@
     padding:2rem;cursor:zoom-out;
   }
   #lightbox.active{display:flex;}
-  #lightbox img{max-width:min(90vw,480px);max-height:75vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.4);}
+  #lightbox img{max-width:100%;max-height:100%;object-fit:contain;}
+  #lightbox-frame{
+    width:min(80vw,340px);height:min(80vw,340px);
+    background:var(--white);border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    padding:1.6rem;box-shadow:0 20px 50px rgba(0,0,0,.4);
+  }
   #lightbox-caption{color:#fff;font-family:'Zen Maru Gothic',sans-serif;margin-top:1rem;font-size:1.1rem;}
 
   /* ---------- FUJIO STORY ---------- */
@@ -414,7 +420,9 @@
 
 <!-- ---------- LIGHTBOX ---------- -->
 <div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-frame">
+    <img id="lightbox-img" src="" alt="">
+  </div>
   <p id="lightbox-caption"></p>
 </div>
 
